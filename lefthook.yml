@@ -14,6 +14,11 @@
 pre-commit:
   commands:
     lint:
-      glob: "*.kt"
-      run: "./gradlew spotlessApply"
+      files: git diff --name-only --staged
+      run: "lefthook run spotless && git add {files}"
 #      run: "poetry run ruff format {staged_files} && poetry run ruff check {staged_files} --fix && git add {staged_files}"
+
+spotless:
+  commands:
+    apply:
+      run: $(git rev-parse --show-toplevel)/gradlew spotlessApply -q
