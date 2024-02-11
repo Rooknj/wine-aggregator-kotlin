@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [":dependencyDashboard"],
+  "automerge": false,
+  "patch": {
+    "automerge": true
+  },
+  "minor": {
+    "automerge": true
+  },
+  "kubernetes": {
+    "fileMatch": [
+      "infra/.+\\.yaml$"
+    ]
+  },
+  "packageRules": []
+}
