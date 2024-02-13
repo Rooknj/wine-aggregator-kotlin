@@ -1,5 +1,7 @@
 rootProject.name = "wine-aggregator"
 
+include("app")
+
 pluginManagement {
     val KOTLIN_VERSION: String by settings
     val SPOTLESS_PLUGIN_VERSION: String by settings
