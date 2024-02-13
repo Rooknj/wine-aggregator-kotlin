@@ -39,6 +39,8 @@ subprojects {
     tasks {
         withType<KotlinCompile> {
             kotlinOptions {
+                // Spring enables null safety in kotlin with this option
+                freeCompilerArgs += "-Xjsr305=strict"
                 jvmTarget = JAVA_VERSION
                 allWarningsAsErrors = true
             }
